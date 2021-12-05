@@ -61,6 +61,7 @@ ament_target_dependencies(
   class_loader
   OpenCV
   rclcpp
+  rclcpp_components
   sensor_msgs
 )
 rclcpp_components_register_nodes(opencv_cam_node "opencv_cam::OpencvCamNode")
@@ -83,6 +84,7 @@ ament_target_dependencies(
   class_loader
   rclcpp
   sensor_msgs
+  rclcpp_components
 )
 rclcpp_components_register_nodes(subscriber_node "opencv_cam::ImageSubscriberNode")
 set(node_plugins "${node_plugins}opencv_cam::ImageSubscriberNode;$<TARGET_FILE:subscriber_node>\n")
@@ -102,6 +104,7 @@ target_link_libraries(
 ament_target_dependencies(
   opencv_cam_main
   rclcpp
+  rclcpp_components 
 )
 
 #=============
@@ -120,6 +123,7 @@ target_link_libraries(
 ament_target_dependencies(
   ipc_test_main
   rclcpp
+  rclcpp_components
 )
 
 #=============
